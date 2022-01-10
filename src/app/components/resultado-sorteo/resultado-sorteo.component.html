@@ -1,0 +1,8 @@
+<div style="text-align: center;">
+    <h1>PLANTILLA E-MAIL</h1>
+    <input type="button" value="Volver" (click)="volver()">
+    <div *ngFor="let emparejamiento of emparejamientos">
+        <p>{{emparejamiento.amigo1.nombre}} regala a {{emparejamiento.amigo2.nombre}}</p>
+    </div>
+</div>
+

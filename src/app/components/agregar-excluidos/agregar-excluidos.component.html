@@ -1,0 +1,19 @@
+<div style="display: flex; justify-content: space-around;">
+    <div>
+        <h1>AÑADIR EXCLUIDOS</h1>
+        <div *ngFor="let participante of participantes" style="display: flex;">
+            <span>{{participante.nombre}} ({{participante.email}})</span>
+            <div *ngFor="let nombre of nombresParticipantes">
+                <input type="checkbox" value="{{nombre}}" (change)="seleccionarExcluidos($event, nombre, participante)" style="margin-left: 1rem;">{{nombre}}
+            </div>
+        </div>    
+        <input type="button" value="Volver" (click)="volver()">
+    </div>
+    <div>
+        <h1>LISTA DE PARTICIPANTES</h1>
+        <div *ngFor="let participante of participantes">
+            <span>{{participante.nombre}}</span>
+        </div>
+        <input type="button" value="Realizar Sorteo" (click)="sorteo()" style="margin-top: 1rem;">
+    </div>    
+</div>    

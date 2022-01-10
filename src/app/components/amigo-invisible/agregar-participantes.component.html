@@ -1,0 +1,19 @@
+<div class="container" style="text-align: center;">
+    <h1>AÑADIR PARTICIPANTES</h1>
+    <form [formGroup]="formGroup" (ngSubmit)="saveParticipants()">
+        <div formArrayName="amigos" *ngFor="let amigo of amigos.controls; let i = index;">
+            <div [formGroupName]="i" style="display: flex;justify-content: center;">
+                <label for="">Nombre:&nbsp;</label>
+                <input type="text" formControlName="nombre">
+                <label for="">Email:&nbsp;</label>
+                <input type="email" formControlName="email">
+                <input type="button" value="Borrar Amigo" (click)="borrarAmigo(i)">
+            </div>
+        </div>    
+        <input type="button" value="Añadir Participantes" (click)="agregarAmigo()" style="margin-left: 30rem;">
+        <div>
+            <input type="submit" value="Guardar Participantes">
+        </div>
+    </form>
+
+</div>
